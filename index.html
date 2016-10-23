@@ -1,23 +1,44 @@
 ---
 layout: default
+title: Front End Web Development Tutorial
+route: index
 ---
 
-<div class="home">
+<section class="index-hello">
+  <div class="hello">
+    <h1>Beginner’s Guide to Web Development</h1>
+    <div class="type-wrap">
+      Learn to code
+      <span id="typed" style="white-space:pre;"></span>
+    </div>
+  </div>
+  <div id="scroll-icon"><i class="fa fa-angle-double-down"></i></div>
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="social-icons">
+    <a href="https://twitter.com/ungmo2" target="_blank">
+      <i class="fa fa-twitter"></i>
+    </a>
+    <a href="https://github.com/ungmo2" target="_blank">
+      <i class="fa fa-github"></i>
+    </a>
+    <a href="mailto:ungmo2@gmail.com" target="_blank">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+</section>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+<div class="index-title">Learning Paths</div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<section class="toc-head">
+  <div class="container">
+    <p class="toc-column--sections">
+      <strong>{{ site.categories | size }}</strong> sections
+    </p>
+    <p class="toc-column--lessons">
+      <strong>{{ site.posts | size }}</strong> lessons
+    </p>
+  </div>
+</section>
 
-</div>
+{% include table-of-contents.html %}
